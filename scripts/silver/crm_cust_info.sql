@@ -18,11 +18,11 @@ SELECT
 	CASE WHEN	UPPER(TRIM(cst_marital_status)) = 'S' THEN 'Single'
 		 WHEN	UPPER(TRIM(cst_marital_status)) = 'M' THEN 'Married'	
 		 ELSE	'n/a'
-	END cst_marital_status,
+	END AS cst_marital_status, -- Normalize marital status values to readable format
 	CASE WHEN	UPPER(TRIM(cst_gndr)) = 'F' THEN 'Female'
 		 WHEN	UPPER(TRIM(cst_gndr)) = 'M' THEN 'Male'	
 		 ELSE	'n/a'
-	END	cst_gndr,
+	END AS	cst_gndr, -- Normalize gender values to readable format
 	cst_create_date
 FROM 
 	(
@@ -35,4 +35,4 @@ WHERE
 	cst_id IS NOT NULL
 	) t
 WHERE 
-	flag_last = 1
+	flag_last = 1 -- Select the most recent record per customer
