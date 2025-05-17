@@ -1,4 +1,6 @@
-
+/*
+Inserting clean and standardized data into the crm_cust_info table under the Silver Layer
+*/
 INSERT INTO silver.crm_cust_info (
 	cst_id, 
 	cst_key, 
