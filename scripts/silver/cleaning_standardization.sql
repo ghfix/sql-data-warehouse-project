@@ -102,3 +102,24 @@ ORDER BY sls_sales, sls_quantity, sls_price
 
 select * from silver.crm_sales_details
 
+
+=================================
+erp_cust_az12 quality checks
+=================================
+-- Identify out-of-range dates
+SELECT DISTINCT
+bdate
+FROM silver.erp_cust_az12
+where bdate < '1924-01-01' OR bdate > GETDATE()
+
+-- Data Standardization & Consistency
+SELECT DISTINCT
+	gen,
+CASE
+	WHEN UPPER(TRIM(gen)) IN ('F' , 'FEMALE') THEN 'Female'
+	WHEN UPPER(TRIM(gen)) IN ('M' , 'MALE') THEN 'Male'
+	ELSE 'n/a'
+END AS gen
+FROM silver.erp_cust_az12
+
+
