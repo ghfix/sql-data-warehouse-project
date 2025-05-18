@@ -61,7 +61,7 @@ BEGIN
 
 		PRINT '>> Inserting Data Into: bronze.crm_sales_details';
 		BULK INSERT bronze.crm_sales_details
-		FROM 'C:\Users\Edwin\Desktop\Data_With_Baraa\source_crm\sales_details.csv'
+		FROM 'C:\Users\Edwin\Desktop\Baraa\datasets\source_crm\sales_details.csv'
 		WITH (
 			FIRSTROW = 2,
 			FIELDTERMINATOR = ',',
