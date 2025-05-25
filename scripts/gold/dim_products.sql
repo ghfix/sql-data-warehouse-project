@@ -1,5 +1,5 @@
 ==========================================================
-  Creating products dimension on the gold layer
+  Create Gold Views for Products
 ==========================================================
 IF OBJECT_ID('gold.dim_products', 'V') IS NOT NULL
     DROP VIEW gold.dim_products;
