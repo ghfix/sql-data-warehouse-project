@@ -1,3 +1,8 @@
+==========================================================
+  Create Gold Views for fact table
+==========================================================
+
+
 IF OBJECT_ID('gold.fact_sales', 'V') IS NOT NULL
     DROP VIEW gold.fact_sales;
 GO
